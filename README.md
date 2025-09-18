@@ -9,9 +9,11 @@ Application frontend Angular servant d'interface pour Veyn, avec TailwindCSS et 
 - Optionnel: **Angular CLI** 16 si vous souhaitez l'installer globalement
 
 Installation CLI (optionnelle):
+
 ```bash
 npm i -g @angular/cli@16
 ```
+
 Sans installation globale, utilisez `npx`.
 
 ### Installation
@@ -28,6 +30,7 @@ npm install
 npm start
 # équivaut à: ng serve
 ```
+
 Ouvrez `http://localhost:4200/`. Le rechargement à chaud est activé.
 
 ### Scripts NPM
@@ -40,10 +43,12 @@ Ouvrez `http://localhost:4200/`. Le rechargement à chaud est activé.
 ### Build et déploiement
 
 Build de production:
+
 ```bash
 npm run build
 # sortie dans dist/frontend
 ```
+
 Servez le contenu du dossier `dist/frontend` via un serveur HTTP statique (Nginx, Apache, S3 + CDN, etc.).
 
 ### Tests
@@ -51,6 +56,7 @@ Servez le contenu du dossier `dist/frontend` via un serveur HTTP statique (Nginx
 ```bash
 npm test
 ```
+
 Exécute les tests unitaires avec Karma/Jasmine en mode watch interactif.
 
 ### Pile technique
@@ -87,11 +93,14 @@ Le projet inclut `tailwind.config.js` et `postcss.config.js`. Les utilitaires Ta
 ### Génération de code (scaffolding)
 
 Avec CLI global:
+
 ```bash
 ng generate component feature/ma-nouvelle-vue
 ng generate service services/mon-service
 ```
+
 Avec `npx` sans CLI global:
+
 ```bash
 npx @angular/cli@16 generate component feature/ma-nouvelle-vue --yes
 ```
@@ -104,4 +113,4 @@ npx @angular/cli@16 generate component feature/ma-nouvelle-vue --yes
 
 ### Licence
 
-Propriété du projet Veyn. Usage interne sauf mention contraire.
+Ce projet est un projet interne développé dans le cadre d'un stage d'été chez Veyn.
