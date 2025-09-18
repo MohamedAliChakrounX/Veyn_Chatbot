@@ -1,27 +1,107 @@
-# Frontend
+## Veyn Frontend (Angular 16 + Tailwind)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+Application frontend Angular servant d'interface pour Veyn, avec TailwindCSS et Font Awesome. Ce dépôt contient notamment une interface de chat (`src/app/chat`) et les services associés.
 
-## Development server
+### Prérequis
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Node.js**: 18.x ou 20.x recommandé
+- **npm**: 9+ (fourni avec Node)
+- Optionnel: **Angular CLI** 16 si vous souhaitez l'installer globalement
 
-## Code scaffolding
+Installation CLI (optionnelle):
+```bash
+npm i -g @angular/cli@16
+```
+Sans installation globale, utilisez `npx`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Installation
 
-## Build
+```bash
+npm ci
+# ou
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Démarrer en local
 
-## Running unit tests
+```bash
+npm start
+# équivaut à: ng serve
+```
+Ouvrez `http://localhost:4200/`. Le rechargement à chaud est activé.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Scripts NPM
 
-## Running end-to-end tests
+- `npm start`: lance le serveur de dev (`ng serve`)
+- `npm run build`: build de production (`ng build`)
+- `npm run watch`: build en watch mode (configuration développement)
+- `npm test`: lance les tests unitaires Karma/Jasmine
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Build et déploiement
 
-## Further help
+Build de production:
+```bash
+npm run build
+# sortie dans dist/frontend
+```
+Servez le contenu du dossier `dist/frontend` via un serveur HTTP statique (Nginx, Apache, S3 + CDN, etc.).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Tests
+
+```bash
+npm test
+```
+Exécute les tests unitaires avec Karma/Jasmine en mode watch interactif.
+
+### Pile technique
+
+- Angular 16.2 (CLI 16.2.16)
+- TailwindCSS 3
+- RxJS 7
+- Font Awesome 6
+
+### Structure du projet (extrait)
+
+```text
+src/
+  app/
+    app.module.ts
+    app-routing.module.ts
+    chat/
+      chat.component.ts
+      chat.component.html
+      chat.component.css
+    services/
+      chat.service.ts
+  assets/
+    IMG/
+      BG1.jpg
+  styles.css        # styles globaux (inclut Tailwind)
+  main.ts
+```
+
+### TailwindCSS
+
+Le projet inclut `tailwind.config.js` et `postcss.config.js`. Les utilitaires Tailwind peuvent être utilisés directement dans les templates HTML (ex: `class="flex gap-2"`).
+
+### Génération de code (scaffolding)
+
+Avec CLI global:
+```bash
+ng generate component feature/ma-nouvelle-vue
+ng generate service services/mon-service
+```
+Avec `npx` sans CLI global:
+```bash
+npx @angular/cli@16 generate component feature/ma-nouvelle-vue --yes
+```
+
+### Dépannage
+
+- Versions Node non compatibles: utilisez Node 18/20 LTS.
+- Problèmes de cache: supprimez `node_modules` et `package-lock.json`, puis `npm ci`.
+- Port déjà utilisé: `ng serve --port 4300`.
+
+### Licence
+
+Propriété du projet Veyn. Usage interne sauf mention contraire.
