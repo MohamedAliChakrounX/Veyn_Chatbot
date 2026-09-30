@@ -518,6 +518,6 @@ Contributions are welcome to expand coverage, refine NLP models, or enhance clie
 
 ## Author and License
 
-- **Developer**: Mohamed Ali ([MohamedAli144](https://github.com/MohamedAli144) / `chmoali99@gmail.com`)
+- **Developer**: Mohamed Ali Chakroun / (`mohamedalichakroun.x@gmail.com`)
 - **Affiliation**: Developed as an internal technical initiative during an engineering internship at Veyn.
 - **License**: Internal proprietary project developed for Veyn. All rights reserved. Refer to repository ownership and internal organizational guidelines for distribution policies.
